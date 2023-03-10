@@ -8,7 +8,7 @@ let formattedData = data as TasbehnaLyrics[];
 
 //iterate on the songs and create open lyrics xml
 
-formattedData.filter(e => e.chorusFirst).splice(0,1).forEach((song, index) => {
+formattedData.forEach((song) => {
   // Create an XML root element with OpenLyrics namespace
   const root = createXML(song);
 
