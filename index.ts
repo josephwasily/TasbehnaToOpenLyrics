@@ -47,16 +47,15 @@ function createXML(song: TasbehnaLyrics) {
     // Add verse element with name attribute
     const verseElement = lyrics.ele("verse", { name: "v" + verseIndex++ });
     // Add lines element with line subelements
-    const linesElement = verseElement.ele("lines");
     for (let line of verse) {
-      linesElement.ele("line", line);
+      verseElement.ele("lines", line);
     }
   }
   if (song.chorus) {
     const chorusElement = lyrics.ele("verse", { name: "c" });
-    const linesElement = chorusElement.ele("lines");
+    // const linesElement = chorusElement.ele("lines");
     for (let line of song.chorus) {
-      linesElement.ele("line", line);
+      chorusElement.ele("lines", line);
     }
   }
 
